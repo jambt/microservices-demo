@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  server:
+    image: python-demo-server
+    container_name: server
+    restart: unless-stopped
+    build: server
+    ports:
+      - "0.0.0.0:8080:80"
+
+  password-checker:
+    image: python-demo-password-checker
+    container_name: password-checker
+    restart: unless-stopped
+    build: password-checker
+
+  password-dedup:
+    image: python-demo-password-dedup
+    container_name: password-dedup
+    restart: unless-stopped
+    build: password-dedup
+
+  redis:
+    image: "redis:alpine"
+
+  known-passwords:
+    image: python-demo-known-passwords
+    container_name: known-passwords
+    restart: unless-stopped
+    build: known-passwords
