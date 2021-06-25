@@ -21,9 +21,15 @@ You need docker, terraform and a kubernetes cluster.
    ```
    the value for `config_context` to your Kubernetes context.
 
-2. Run `terraform apply` and confirm with `yes`. This will do the following:
+2. Run `terraform init` to initialize module and provider configuration.
+
+3. Run `terraform apply` and confirm with `yes`. This will do the following:
    * Build the docker images
    * Deploy the services and deployments to K8s
+
+## Usage
+Navigate to your K8s installation. The frontend service is exposed on port `8000`.
+For a local installation, head to [http://localhost:8000].
 
 
 ## Uninstall
